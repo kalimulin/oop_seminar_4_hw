@@ -1,21 +1,21 @@
 import java.util.List;
 
-public class StudentController implements UserController {
+public class TeacherController implements UserController {
     private final TeacherService teacherService = new TeacherService();
 
     private final TeacherView teacherView = new TeacherView();
 
-    public void removeTeacherByFio(String firstName, String lastName, String middleName) {
+    public void removeStudentByFio(String firstName, String lastName, String middleName) {
         teacherService.removeTeacherByFio(firstName, lastName, middleName);
     }
 
-    public List<Teacher> getSortedStudentList() {
+    public List<Teacher> getSortedTeacherList() {
         List<Teacher> teacherList = teacherService.getSortedTeacherList();
         teacherView.sendOnConsole(teacherList);
         return teacherList;
     }
 
-    public List<Teacher> getSortedStudentByFio() {
+    public List<Teacher> getSortedTeacherByFio() {
         List<Teacher> teacherList = teacherService.getSortedTeachersByFio();
         teacherView.sendOnConsole(teacherList);
         return teacherList;

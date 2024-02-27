@@ -7,7 +7,7 @@ public class TeacherService {
 
     private TeacherList teacherList;
 
-    public void RemoveTeacherByFio(String firstName, String lastName, String middleName) {
+    public void removeTeacherByFio(String firstName, String lastName, String middleName) {
         Iterator<Teacher> iterator = teacherList.iterator();
 
         while (iterator.hasNext()) {
@@ -25,7 +25,7 @@ public class TeacherService {
         return list;
     }
 
-    public List<Teacher> getSortedStudentsByFio() {
+    public List<Teacher> getSortedTeachersByFio() {
         List<Teacher> list = new ArrayList<>(teacherList.getTeacherList());
         list.sort(new UserComparator<Teacher>());
         return list;
